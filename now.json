@@ -2,6 +2,13 @@
     "version": 2,
     "name": "ahemwtf",
     "builds": [
-        { "src": "**/*.js", "use": "@now/node" }
+        {
+          "src": "**/*.js", "use": "@now/node-server",
+          "config": {
+            "maxLambdaSize": "10mb"
+          }
+        },
+        { "src": "gifs/**", "use": "@now/static" },
+        { "src": "about/**", "use": "@now/static" }
     ]
 }
